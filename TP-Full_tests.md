@@ -25,7 +25,7 @@
     Le résultat est la somme des 3 cadrans + les 3 pouvoirs.
     Ainsi si le cadran de la lune vaut 1, le cadran de la terre vaut 2 et le cadran du soleil vaut 1
     alors le résultat est (1 + 1) - 2 = 0
-    il s'agit de l'heure aprenoon
+    il s'agit de l'heure mortin
 
     Si le résultat est <= 1 alors l'heure est mortin
     sinon si le résultat est <= 2, alors l'heure est aprenoon
