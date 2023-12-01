@@ -34,9 +34,9 @@ function App() {
   return (
     <>
       <div>
-        <input className='input' name='lune' value={input1} type="number" onChange={handleValueChange1} />
-        <input className='input' name='terre' value={input2} type="number" onChange={handleValueChange2} />
-        <input className='input' name='soleil' value={input3} type="number" onChange={handleValueChange3} />
+        <input id='lune_id' name='lune' value={input1} type="number" onChange={handleValueChange1} />
+        <input id='terre_id' name='terre' value={input2} type="number" onChange={handleValueChange2} />
+        <input id='soleil_id' name='soleil' value={input3} type="number" onChange={handleValueChange3} />
         <button id='button' onClick={handleShowResult}>Calculer</button>
         {showResult === true && <p>{result}</p>}
       </div>

@@ -1,18 +1,39 @@
-// import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
-// test('has title', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
+test('input value lune à 2', async ({ page }) => {
+    await page.goto('http://localhost:5173/');
+    await page.locator('#lune_id').fill('2');
+    
+    await expect(page.locator("#lune_id")).toHaveValue('2');
+});
 
-//   // Expect a title "to contain" a substring.
-//   await expect(page).toHaveTitle(/Playwright/);
-// });
+test('input value terre à 2', async ({ page }) => {
+    await page.goto('http://localhost:5173/');
+    await page.locator('#terre_id').fill('2');
+    
+    await expect(page.locator("#terre-id")).toHaveText(['1', '2']);
+});
 
-// test('get started link', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
+test('input value soleil à 1', async ({ page }) => {
+    await page.goto('http://localhost:5173/');
+    await page.locator('#soleil_id').fill('1');
+    
+    await expect(page.locator("#soleil-id")).toHaveText("1 | 2");
+});
 
-//   // Click the get started link.
-//   await page.getByRole('link', { name: 'Get started' }).click();
+test('input value soleil à 5', async ({ page }) => {
+    await page.goto('http://localhost:5173/');
+    await page.locator('input[name="soleil"]').click();
+    await page.locator('#soleil_id').fill('5');
+    
+    await expect(page.locator("#soleil-id")).toHaveText("1 | 2");
+});
 
-//   // Expects page to have a heading with the name of Installation.
-//   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-// });
+test('input value soleil à <string>', async ({ page }) => {
+    await page.goto('http://localhost:5173/');
+    await page.locator('input[name="soleil"]').click();
+    await page.locator('#soleil_id').fill('sdiqsjdqourqeuiorqidkqsm');
+    
+    await expect(page.locator("#soleil-id")).toHaveText("1 | 2");
+});
+
