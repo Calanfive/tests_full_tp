@@ -41,6 +41,4 @@ export function calculerHeure(lune: number, terre: number, soleil: number): stri
     }
     
     return "nuight"
-
-
     };
